@@ -957,6 +957,11 @@ in {
       unwrappedPackage = "firefox-unwrapped";
       visible = true;
     };
+    floorp = browserOptions {
+      name = "Floorp";
+      package = "floorp";
+      unwrappedPackage = "floorp-unwrapped";
+    };
   };
 
   config = mkMerge [
@@ -970,6 +975,15 @@ in {
         "Library/Application Support/Firefox"
       else
         "${vendorPath}/firefox";
+      isWrapped = true;
+    })
+    (browserConfig {
+      name = "Floorp";
+      module = "floorp";
+      browserPath = if isDarwin then
+        "Library/Application Support/Floorp"
+      else
+        ".floorp";
       isWrapped = true;
     })
   ] // {
