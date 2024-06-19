@@ -44,11 +44,11 @@
         fcitx5-qt = prev.mkStubPackage { outPath = null; };
 
         fcitx5-with-addons = qt5prev.fcitx5-with-addons.override {
-          inherit (final) libsForQt5 qt6Packages;
+          inherit (final) libsForQt5 kdePackages;
         };
       });
 
-      qt6Packages = prev.qt6Packages.overrideScope (qt6final: qt6prev: {
+      kdePackages = prev.kdePackages.overrideScope (qt6final: qt6prev: {
         fcitx5-qt = prev.mkStubPackage { outPath = null; };
       });
 

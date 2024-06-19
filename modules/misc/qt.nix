@@ -7,10 +7,10 @@ let
   platformPackages = with pkgs; {
     gnome = [ qgnomeplatform qgnomeplatform-qt6 ];
     adwaita = [ qadwaitadecorations qadwaitadecorations-qt6 ];
-    gtk = [ libsForQt5.qtstyleplugins qt6Packages.qt6gtk2 ];
+    gtk = [ libsForQt5.qtstyleplugins kdePackages.qt6gtk2 ];
     kde = [ libsForQt5.plasma-integration libsForQt5.systemsettings ];
     lxqt = [ lxqt.lxqt-qtplugin lxqt.lxqt-config ];
-    qtct = [ libsForQt5.qt5ct qt6Packages.qt6ct ];
+    qtct = [ libsForQt5.qt5ct kdePackages.qt6ct ];
   };
 
   # Maps style names to their QT_QPA_PLATFORMTHEME, if necessary.
@@ -24,7 +24,7 @@ let
     bb10bright = libsForQt5.qtstyleplugins;
     bb10dark = libsForQt5.qtstyleplugins;
     cleanlooks = libsForQt5.qtstyleplugins;
-    gtk2 = [ libsForQt5.qtstyleplugins qt6Packages.qt6gtk2 ];
+    gtk2 = [ libsForQt5.qtstyleplugins kdePackages.qt6gtk2 ];
     motif = libsForQt5.qtstyleplugins;
     cde = libsForQt5.qtstyleplugins;
     plastique = libsForQt5.qtstyleplugins;
@@ -37,7 +37,7 @@ let
     breeze = libsForQt5.breeze-qt5;
 
     kvantum =
-      [ libsForQt5.qtstyleplugin-kvantum qt6Packages.qtstyleplugin-kvantum ];
+      [ libsForQt5.qtstyleplugin-kvantum kdePackages.qtstyleplugin-kvantum ];
   };
 
 in {
@@ -73,8 +73,8 @@ in {
               [ "libsForQt5" "systemsettings" ]
               [ "lxqt" "lxqt-config" ]
               [ "lxqt" "lxqt-qtplugin" ]
-              [ "qt6Packages" "qt6ct" ]
-              [ "qt6Packages" "qt6gtk2" ]
+              [ "kdePackages" "qt6ct" ]
+              [ "kdePackages" "qt6gtk2" ]
             ];
             description = ''
               Platform theme to use for Qt applications.
@@ -146,8 +146,8 @@ in {
             [ "libsForQt5" "breeze-qt5" ]
             [ "libsForQt5" "qtstyleplugin-kvantum" ]
             [ "libsForQt5" "qtstyleplugins" ]
-            [ "qt6Packages" "qt6gtk2" ]
-            [ "qt6Packages" "qtstyleplugin-kvantum" ]
+            [ "kdePackages" "qt6gtk2" ]
+            [ "kdePackages" "qtstyleplugin-kvantum" ]
           ];
           description = ''
             Style to use for Qt5/Qt6 applications. Case-insensitive.
